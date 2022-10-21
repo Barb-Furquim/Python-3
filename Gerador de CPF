@@ -1,7 +1,7 @@
 from random import randint
 numero = str (randint(100000000, 999999999))
 
-novo_cpf = numero                            # Elimina od dois últimos digitos do CPF
+novo_cpf = numero                            
 reverso = 10                                 # Contador reverso
 total = 0
 
