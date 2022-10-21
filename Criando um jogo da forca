@@ -11,7 +11,7 @@ while True:
 
     letra = input('Digite uma letra: ')
 
-    # Qtd de carac. que o usuário vai digitar
+    # Qtd de caracteres digitadas
     if len(letra) > 1:  
          print('Ahhh isso não vale, digite apenas uma letra.')
          continue
