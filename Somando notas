@@ -1,0 +1,15 @@
+num_notas = 0
+notas = []
+while(num_notas < 4):
+    print('Insira uma NOTA (Bimestre: {})'.format(num_notas + 1))
+    try:
+        nota = float(input())
+    except ValueError:
+        print('Você inseriu uma letra!')
+        continue
+
+    notas += [nota]
+    num_notas += 1
+
+media = sum(notas) / 4
+print(f'Sua média é {media:.1f}')
