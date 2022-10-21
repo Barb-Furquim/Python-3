@@ -16,10 +16,10 @@ while True:
          print('Ahhh isso não vale, digite apenas uma letra.')
          continue
  
-    # Guardar as letras CERTAS que o usuário digitar
+    # Guarda letras corretas
     digitadas.append(letra)
 
-    # Mostrar se a letra existe
+    # Mostra se a letra existe
     if letra in secreto:  
         print(f'UHUUUL, a letra "{letra}" existe na palavra secreta!')
     else:
@@ -28,10 +28,10 @@ while True:
         # Retira letra inexistente de "digitadas"
         digitadas.pop()  
 
-    # Preenchida com a letra correta ou *
+    # Guarda letra correta ou *
     secreto_temporario = ''  
     
-    # Mostrar letras acertadas e faltantes (*)
+    # Mostra letras acertadas e faltantes (*)
     for letra_secreta in secreto:
     
         # Concatenar letra digitada e os *
