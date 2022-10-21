@@ -40,7 +40,7 @@ while True:
         else:
            
             # Ocultar com '*' a letra inexistente
-            secreto_temporario += "*"  # Serve para 
+            secreto_temporario += "*"
  
     # Chegar descoberta palavra secreta
     if secreto_temporario == secreto:   
@@ -49,7 +49,8 @@ while True:
     else:
         print(f'A palavra secreta esta assim: {secreto_temporario}')
 
-    if letra not in secreto:  # Para checar a qtd de erros
+    # Qtd de erros
+    if letra not in secreto:
         chances -= 1
 
     print(f'Você ainda tem {chances} chances.')
