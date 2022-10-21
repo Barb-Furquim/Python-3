@@ -1,0 +1,56 @@
+secreto = 'perfume'
+digitadas = []
+chances = 3
+
+while True:
+
+    # Define qtd de chances
+    if chances <= 0: 
+        print('Você perdeu!!!!')
+        break
+
+    letra = input('Digite uma letra: ')
+
+    # Qtd de carac. que o usuário vai digitar
+    if len(letra) > 1:  
+         print('Ahhh isso não vale, digite apenas uma letra.')
+         continue
+ 
+    # Guardar as letras CERTAS que o usuário digitar
+    digitadas.append(letra)
+
+    # Mostrar se a letra existe
+    if letra in secreto:  
+        print(f'UHUUUL, a letra "{letra}" existe na palavra secreta!')
+    else:
+        print(f'AAAAH, a letra "{letra}" NÃO EXISTE na palavra secreta!')
+        
+        # Retira letra inexistente de "digitadas"
+        digitadas.pop()  
+
+    # Preenchida com a letra correta ou *
+    secreto_temporario = ''  
+    
+    # Mostrar letras acertadas e faltantes (*)
+    for letra_secreta in secreto:
+    
+        # Concatenar letra digitada e os *
+        if letra_secreta in digitadas:
+            secreto_temporario += letra_secreta  
+        else:
+           
+            # Ocultar com '*' a letra inexistente
+            secreto_temporario += "*"  # Serve para 
+ 
+    # Chegar descoberta palavra secreta
+    if secreto_temporario == secreto:   
+        print(f'Que legal, vocẽ ganhou!!!!! a palavra era: {secreto_temporario}.')
+        break
+    else:
+        print(f'A palavra secreta esta assim: {secreto_temporario}')
+
+    if letra not in secreto:  # Para checar a qtd de erros
+        chances -= 1
+
+    print(f'Você ainda tem {chances} chances.')
+    print()
