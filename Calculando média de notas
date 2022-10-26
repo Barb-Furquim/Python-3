@@ -1,7 +1,10 @@
-num_notas = 0
-notas = []
-while(num_notas < 4):
-    print('Insira uma NOTA (Bimestre: {})'.format(num_notas + 1))
+num_notas = 0                                 # Contador
+notas = []                                    # Guarda as notas já digitadas
+
+while (num_notas < 4):
+    print('Insira uma NOTA (Bimestre: {})'.format(num_notas + 1))       # Soma + 1 ao contador para definir qual Bimestre a nota se refere
+
+    # Checagem para evitar erros no código
     try:
         nota = float(input())
     except ValueError:
