@@ -1,4 +1,4 @@
-# Contador
+# Contador progressivo(p) e regressivo(r)
 """
 for / while
 0 10
@@ -11,7 +11,5 @@ for / while
 7 3
 8 2
 """
-x = [10, 9, 8, 7, 6, 5, 4, 3, 2]
-
-for contador, valor in enumerate(x):         # Enumera cada volta do laço for
-    print(contador, valor)
+for p, r in enumerate(range(10, 1, -1)):         # Range printa números de forma regressiva, retirando o último número
+    print(p, r)
