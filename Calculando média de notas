@@ -11,10 +11,12 @@ while (num_notas < 4):
         nota = float(input())                # Checa se o input é um número
     except ValueError:
         print('Você inseriu uma letra, tente novamente!')
-        continue                             # Repete a mesma volta do loop
+        
+        # Repete a mesma volta do loop
+        continue                             
 
     notas += [nota]                          # Inclui a nota digitada na lista "notas"
     num_notas += 1                           # Soma + 1 ao contador "num_notas"
 
 media = sum(notas) / 4
-print(f'Sua média é {media:.1f}')            # Soma as notas e  / 4
+print(f'Sua média é {media:.1f}')            # Soma todas as notas e / 4
