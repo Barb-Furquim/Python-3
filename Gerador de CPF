@@ -1,24 +1,24 @@
 from random import randint
-numero = str (randint(100000000, 999999999))
+numero = str(randint(100000000, 999999999))
 
-novo_cpf = numero                            
-reverso = 10                                 # Contador reverso
+novo_cpf = numero                                     # Para retirar os dois ultimos números
+reverso = 10
 total = 0
 
-for index in range (19):
-    if index > 8:                            # Primeiro índice vai de 0 a 9
-        index -= 9                           # São os 9 primeiros digitos do CPF
+for index in range(19):                               # Contar 19 laços de forma crescente
+    if index > 8:                                     # Contar os índices maiores que 8
+        index -= 9                                    # Diminuir 9 do índice
 
-    total += int(novo_cpf[index]) * reverso         # Valor total da multiplicação
+    total += int(novo_cpf[index]) * reverso
 
     reverso -= 1
-    if reverso < 2:                          # Decrementa o contador reverso
+    if reverso < 2:                                   # contagem decrescente dos laços
         reverso = 11
         d = 11 - (total % 11)
 
-        if d < 9:                            # Se o digito for > que 9 o valor é 0
+        if d < 9:
             d = 0
-        total = 0                            # Zera o total
-        novo_cpf += str(d)                   # Concatena o digito gerado no novo cpf
+        total = 0
+        novo_cpf += str(d)
 
 print(novo_cpf)
