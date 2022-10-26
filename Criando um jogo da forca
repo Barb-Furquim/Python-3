@@ -11,7 +11,7 @@ while True:
 
     letra = input('Digite uma letra: ')
 
-    # Qtd de caracteres digitadas
+    # Qtd de caracteres digitados
     if len(letra) > 1:  
          print('Ahhh isso não vale, digite apenas uma letra.')
          continue
@@ -34,7 +34,7 @@ while True:
     # Mostra letras acertadas e faltantes (*)
     for letra_secreta in secreto:
     
-        # Concatenar letra digitada e os *
+        # Concatenar letra digitada e *
         if letra_secreta in digitadas:
             secreto_temporario += letra_secreta  
         else:
