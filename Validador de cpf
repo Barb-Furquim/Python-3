@@ -25,7 +25,7 @@ novo_cpf = cpf[:-2]                          # Para retirar os dois ultimos núm
 reverso = 10
 total = 0                                    # Salvar a soma total de cada índice
 
-for index in range (19):                     # Contar 19 laços de forma crescente
+for index in range(19):                      # Contar 19 laços de forma crescente
     if index > 8:                            # 1º loop: contar até 8 (decobrir 1º digito)
         index -= 9                           # 2º loop: contar até 9 (decobrir 2º digito)
 
