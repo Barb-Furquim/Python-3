@@ -21,27 +21,28 @@ Digito 1 = 0               #     Digito 2 = 9
 
 # cpf = '16899535009'                        # Somente para teste da atividade, pois não é correto deixar dados hardcoded dentro do código
 cpf = input("Digite um cpf: ")
-novo_cpf = cpf[:-2]                          # Para retirar os dois ultimos números
-reverso = 10
+novo_cpf = cpf[:-2]                          # Elimina os dois últimos digitos do CPF
+reverso = 10                                 # Contador reverso
 total = 0                                    # Salvar a soma total de cada índice
 
+# Loop do CPF
 for index in range(19):                      # Contar 19 laços de forma crescente
-    if index > 8:                            # 1º loop: contar até 8 (decobrir 1º digito)
-        index -= 9                           # 2º loop: contar até 9 (decobrir 2º digito)
+    if index > 8:                            # Primeiro índice vai de 0 a 9
+        index -= 9                           # São os 9 primeiros digitos do CPF
 
     # print(cpf[index], index, reverso)      # Somente para visualizar os dados
 
-    total += int(novo_cpf[index]) * reverso  # Soma dos 9 primeiros digitos do cpf * contagem reverso
+    total += int(novo_cpf[index]) * reverso  # Valor total da multiplicação
 
-    reverso -= 1
-    if reverso < 2:                           # contagem decrescente dos laços
+    reverso -= 1                              # Decrementa do contador reverso
+    if reverso < 2:                           
         reverso = 11
-        d = 11 - (total % 11)                 # Conta 1º digito
+        d = 11 - (total % 11)                 
 
-        if d > 9:                             # Checagem 1º digito
+        if d > 9:                             # Se o digito for > que 9 o valor é 0
             d = 0
-        total = 0                             # Zerar total, para começar contagem novamente
-        novo_cpf += str(d)                    # Concatenar o 1º digito na variável "novo_cpf" cast para str
+        total = 0                             # Zerar total
+        novo_cpf += str(d)                    # Concatenar o digito gerado no "novo_cpf"
 
 if cpf == novo_cpf:                           # Validação do cpf
     print("Válido")
