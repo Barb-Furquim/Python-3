@@ -1,0 +1,48 @@
+'''
+
+CPF = 168.995.350-09
+__________________________________________________
+1 * 10 = 10                #     1 * 11 = 11   <---
+6 * 9 = 54                 #     6 * 10 = 60
+8 * 8 = 64                 #     8 * 9 = 72
+9 * 7 = 63                 #     9 * 8 = 72
+9 * 6 = 54                 #     9 * 7 = 63
+5 * 5 = 25                 #     5 * 6 = 30
+3 * 4 = 12                 #     3 * 5 = 15
+5 * 3 = 15                 #     5 * 4 = 20
+0 * 2 = 0                  #     0 * 3 = 0
+total: 297                 #     0 * 2 = 0
+                           # --> total: 343
+11 - (297 % 11) = 11       #
+11 > 9 = 0                 #     11 - (343 % 11) = 9
+Digito 1 = 0               #     Digito 2 = 9
+
+'''
+
+cpf = '16899535007'                          # 10 índices
+novo_cpf = cpf[:-2]                          # Para retirar os dois ultimos números
+reverso = 10
+total = 0                                    # Salvar a soma total de cada índice
+
+for index in range (19):                     # Contar 19 laços de forma crescente
+    if index > 8:                            # 1º loop: contar até 8 (decobrir 1º digito)
+        index -= 9                           # 2º loop: contar até 9 (decobrir 2º digito)
+
+    # print(cpf[index], index, reverso)      # Somente para visualizar os dados
+
+    total += int(novo_cpf[index]) * reverso  # Soma dos 9 primeiros digitos do cpf * contagem reverso
+
+    reverso -= 1
+    if reverso < 2:                           # contagem decrescente dos laços
+        reverso = 11
+        d = 11 - (total % 11)                 # Conta 1º digito
+
+        if d > 9:                             # Checagem 1º digito
+            d = 0
+        total = 0                             # Zerar total, para começar contagem 2º digito
+        novo_cpf += str(d)                    # Concatenar o 1º digito na variável "novo_cpf" cast para str
+
+if cpf == novo_cpf:                           # Validação do cpf
+    print("Válido")
+else:
+    print("Inválido")
