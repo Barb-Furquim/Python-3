@@ -19,7 +19,7 @@ Digito 1 = 0               #     Digito 2 = 9
 
 '''
 
-# cpf = '16899535009'                        # 10 índices
+# cpf = '16899535009'                        # Somente para teste da atividade, pois não é correto deixar dados hardcoded dentro do código
 cpf = input("Digite um cpf: ")
 novo_cpf = cpf[:-2]                          # Para retirar os dois ultimos números
 reverso = 10
