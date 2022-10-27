@@ -19,7 +19,8 @@ Digito 1 = 0               #     Digito 2 = 9
 
 '''
 
-cpf = '16899535007'                          # 10 índices
+# cpf = '16899535009'                        # 10 índices
+cpf = input("Digite um cpf: ")
 novo_cpf = cpf[:-2]                          # Para retirar os dois ultimos números
 reverso = 10
 total = 0                                    # Salvar a soma total de cada índice
@@ -39,7 +40,7 @@ for index in range (19):                     # Contar 19 laços de forma crescen
 
         if d > 9:                             # Checagem 1º digito
             d = 0
-        total = 0                             # Zerar total, para começar contagem 2º digito
+        total = 0                             # Zerar total, para começar contagem novamente
         novo_cpf += str(d)                    # Concatenar o 1º digito na variável "novo_cpf" cast para str
 
 if cpf == novo_cpf:                           # Validação do cpf
