@@ -44,7 +44,10 @@ for index in range(19):                      # Contar 19 laços de forma crescen
         total = 0                             # Zerar total
         novo_cpf += str(d)                    # Concatenar o digito gerado no "novo_cpf"
 
-if cpf == novo_cpf:                           # Validação do cpf
+# Evita sequencias
+sequencia = novo_cpf == str(novo_cpf[0]) * len(cpf)
+
+if cpf == novo_cpf and not sequencia:                           # Validação do cpf
     print("Válido")
 else:
     print("Inválido")
