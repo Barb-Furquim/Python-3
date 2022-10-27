@@ -18,12 +18,15 @@ total: 297                 #     0 * 2 = 0
 Digito 1 = 0               #     Digito 2 = 9
 
 '''
+# Loop infinito
 while True:
     # cpf = '16899535009'                     # Somente para teste da atividade, pois não é correto deixar dados hardcoded dentro do código
     cpf = input("Digite um CPF: ")
     novo_cpf = cpf[:-2]                       # Elimina os dois últimos digitos do CPF
     reverso = 10                              # Contador reverso
     total = 0
+    
+    # Loop do CPF
     for index in range(19):
         if index > 8:                         # Primeiro índice vai de 0 a 9
             index -= 9                        # São os 9 primeiros digitos do CPF
