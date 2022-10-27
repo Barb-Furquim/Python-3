@@ -1,4 +1,4 @@
-from random import randint
+from random import randint                            # Gera números inteiros aleatórios
 numero = str(randint(100000000, 999999999))
 
 novo_cpf = numero                                     # Para retirar os dois ultimos números
@@ -16,7 +16,7 @@ for index in range(19):                               # Contar 19 laços de form
         reverso = 11
         d = 11 - (total % 11)
 
-        if d < 9:
+        if d > 9:
             d = 0
         total = 0
         novo_cpf += str(d)
