@@ -1,4 +1,4 @@
-secreto = 'perfume'                 # Somente para teste da atividade, pois não é correto deixar dados hardcoded dentro do código
+secreto = 'perfume'                 
 digitadas = []
 chances = 3
 
